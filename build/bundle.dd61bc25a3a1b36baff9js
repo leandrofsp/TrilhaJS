@@ -1,0 +1,86 @@
+webpackJsonp([1,2],{
+
+/***/ 168:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _util = __webpack_require__(79);
+
+var _util2 = _interopRequireDefault(_util);
+
+var _react = __webpack_require__(23);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(29);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+__webpack_require__(80);
+
+var _app = __webpack_require__(78);
+
+var _app2 = _interopRequireDefault(_app);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('app'));
+
+console.log(_util2.default.upper('trilha js'));
+
+/***/ }),
+
+/***/ 78:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(23);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Home = function Home() {
+  return _react2.default.createElement(
+    'h1',
+    null,
+    'Ola Mundo!'
+  );
+};
+
+exports.default = Home;
+
+/***/ }),
+
+/***/ 79:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var upperText = {
+  upper: function upper(text) {
+    return text.toUpperCase();
+  }
+};
+
+module.exports = upperText;
+
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ })
+
+},[168]);

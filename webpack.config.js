@@ -1,10 +1,18 @@
 const path = require('path');
+
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const VENDOR_LIBS = ['react', 'react-dom'];
 
 const config = {
-	entry: './src/index.js',
+	entry: {
+		bundle: './src/index.js',
+		vendor: VENDOR_LIBS
+	},
 	output: {
-		filename: 'bundle.js',
+		filename: '[name].[chunkhash]js',
 		path: path.resolve(__dirname, 'build')
 	},
 		module: {
@@ -15,12 +23,20 @@ const config = {
 			},
 			{
 				test:/\.js$/,
-				use: 'babel-loader'
-			}
+				use: 'babel-loader', 'eslint-loader',
+				exclude: /node_modules/
+			},
+
 		]
 	},
 	plugins:[
-	new ExtractTextPlugin('style.css')
+	new ExtractTextPlugin('style.css'),
+	new webpack.optimize.CommonsChunkPlugin({
+		name: ['vendor', 'manifest']
+	}),
+	new HtmlWebpackPlugin({
+		template: './src/index.html'
+	})
 	]
 }
 
